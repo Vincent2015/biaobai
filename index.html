@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>Hello APP</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./css/api.css" /> -->
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    
+    <style>
+    #main
+    {
+     
+      background-color:#eee;
+    }
+	
+	#data{
+	 display:block;
+	 position:absolute;
+	 left:20%;
+	 width:60%;
+	 border:1px solid #fff;
+	
+	 
+	}
+	
+	#data1{
+	 display:block;
+	 position:absolute;
+	 left:10%;
+	 width:80%;
+	
+	
+	 
+	}
+	
+	
+	
+	input{
+	 margin-bottom:20px;
+	 
+	
+	}
+	
+	
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>APP</h1>
+        </div>
+        <div id="main">
+		  <div id="data">
+		   <div id="data1">
+		     <label for="sname">
+			 故事名称
+			 <input type="text" id="sname" name="sname" value=""/>
+			 </label>
+		      <label for="stitle">
+			 故事简介
+			 <textarea placeholder="100字以内" id="stitle" onkeypress="validateWordNum(event)"></textarea>
+			 </label>
+			 
+			  <label for="spic">
+			 故事封面
+
+			 </label>
+		  </div>
+		     
+		  </div>
+          
+ 
+        </div>
+        <div id="footer">
+        
+            <h5>Copyright &copy;2014 </h5>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+
+       
+    };
+    
+    function generate()
+    {
+      
+      var header = $api.byId('header');
+	  $api.fixIos7Bar(header); 
+	  var headerPos = $api.offset(header);
+	  var main = $api.byId('main');
+	  var mainPos = $api.offset(main);
+      api.openWin({
+	       name: 'home',
+	       url: 'html/home.html'
+       });
+    
+    }
+</script>
+</html>
